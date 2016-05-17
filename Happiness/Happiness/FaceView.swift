@@ -112,8 +112,8 @@ class FaceView: UIView {
         bezierPathForEye(.Left).stroke()
         bezierPathForEye(.Right).stroke()
         
-        let happiness = dataSource != nil ? dataSource!.happinessForFaceView(self) : 0.0
-        let smilePath = bezierPathForSmile(happiness ?? 0.0)
+        let happiness = dataSource?.happinessForFaceView(self) ?? 0.0
+        let smilePath = bezierPathForSmile(happiness)
         smilePath.stroke()
     }
 

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Cover</key>
+	<array>
+		<string>AC4.jpg</string>
+		<string>CoDGhosts.jpg</string>
+		<string>DeadRising.jpg</string>
+		<string>Destiny.jpg</string>
+		<string>Division.jpg</string>
+		<string>Evil.jpg</string>
+		<string>Forza.jpg</string>
+		<string>Halo.jpg</string>
+		<string>Infamous.jpg</string>
+		<string>KillZone.jpg</string>
+		<string>Order.jpg</string>
+		<string>Ryse.jpg</string>
+		<string>Thief.jpg</string>
+		<string>Titanfall.jpg</string>
+		<string>WatchDogs.jpg</string>
+	</array>
+	<key>System</key>
+	<array>
+		<string>PS4</string>
+		<string>Xbone</string>
+		<string>Xbone</string>
+		<string>Xbone</string>
+		<string>PS4</string>
+		<string>PS4</string>
+		<string>Xbone</string>
+		<string>Xbone</string>
+		<string>PS4</string>
+		<string>PS4</string>
+		<string>PS4</string>
+		<string>Xbone</string>
+		<string>PS4</string>
+		<string>Xbone</string>
+		<string>PS4</string>
+	</array>
+	<key>Price</key>
+	<array>
+		<string>59.95</string>
+		<string>59.98</string>
+		<string>39.95</string>
+		<string>49.95</string>
+		<string>49.98</string>
+		<string>39.54</string>
+		<string>29.99</string>
+		<string>19.95</string>
+		<string>17.85</string>
+		<string>9.99</string>
+		<string>42.89</string>
+		<string>19.99</string>
+		<string>23.50</string>
+		<string>40.00</string>
+		<string>20.00</string>
+	</array>
+	<key>GameName</key>
+	<array>
+		<string>Assassins Creed 4</string>
+		<string>Call of Duty Ghosts</string>
+		<string>Dead Rising 3</string>
+		<string>Destiny</string>
+		<string>The Division</string>
+		<string>The Evil Within</string>
+		<string>Forza 5</string>
+		<string>Halo</string>
+		<string>Infamous Second Son</string>
+		<string>Killzone</string>
+		<string>The Order</string>
+		<string>Ryse</string>
+		<string>Thief</string>
+		<string>Titanfall</string>
+		<string>Watchdogs</string>
+	</array>
+</dict>
+</plist>
