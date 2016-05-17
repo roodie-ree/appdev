@@ -32,6 +32,7 @@
 		63AF31A71CE48FEE0000CD4E /* Thief.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63AF31971CE48FEE0000CD4E /* Thief.jpg */; };
 		63AF31A81CE48FEE0000CD4E /* Titanfall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63AF31981CE48FEE0000CD4E /* Titanfall.jpg */; };
 		63AF31A91CE48FEE0000CD4E /* WatchDogs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63AF31991CE48FEE0000CD4E /* WatchDogs.jpg */; };
+		63ECA0F01CEB228F0084F481 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ECA0EF1CEB228F0084F481 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		63AF31971CE48FEE0000CD4E /* Thief.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Thief.jpg; sourceTree = "<group>"; };
 		63AF31981CE48FEE0000CD4E /* Titanfall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Titanfall.jpg; sourceTree = "<group>"; };
 		63AF31991CE48FEE0000CD4E /* WatchDogs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WatchDogs.jpg; sourceTree = "<group>"; };
+		63ECA0EF1CEB228F0084F481 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				63AF31641CE37ED00000CD4E /* Info.plist */,
 				63AF31861CE37F7F0000CD4E /* GameShopTableViewController.swift */,
 				63AF31881CE380870000CD4E /* GameTableViewCell.swift */,
+				63ECA0EF1CEB228F0084F481 /* Game.swift */,
 			);
 			path = GameShop;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63AF31871CE37F7F0000CD4E /* GameShopTableViewController.swift in Sources */,
+				63ECA0F01CEB228F0084F481 /* Game.swift in Sources */,
 				63AF315B1CE37ED00000CD4E /* ViewController.swift in Sources */,
 				63AF31591CE37ED00000CD4E /* AppDelegate.swift in Sources */,
 				63AF31891CE380870000CD4E /* GameTableViewCell.swift in Sources */,
@@ -565,6 +569,7 @@
 				63AF317F1CE37ED00000CD4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63AF31801CE37ED00000CD4E /* Build configuration list for PBXNativeTarget "GameShopTests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +578,7 @@
 				63AF31821CE37ED00000CD4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63AF31831CE37ED00000CD4E /* Build configuration list for PBXNativeTarget "GameShopUITests" */ = {
 			isa = XCConfigurationList;
@@ -581,6 +587,7 @@
 				63AF31851CE37ED00000CD4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

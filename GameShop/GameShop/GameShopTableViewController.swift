@@ -18,10 +18,7 @@ protocol GameTableViewCellDataSource: class {
 
 class GameShopTableViewController: UITableViewController, GameTableViewCellDataSource {
     
-    var GameCoverArts: [String] = []
-    var GameNames: [String] = []
-    var GamePlatforms: [String] = []
-    var GamePrices: [String] = []
+    var games: [Game] = []
 
     override init(style: UITableViewStyle) {
         super.init(style: style)
@@ -34,22 +31,13 @@ class GameShopTableViewController: UITableViewController, GameTableViewCellDataS
     }
     
     func loadModel() {
-        if let path = NSBundle.mainBundle().pathForResource("Data", ofType: "plist", inDirectory: "/") {
-            if let data = NSDictionary(contentsOfFile: path) as? [String: [String]] {
-                if let cover = data["Cover"] {
-                    if let name = data["GameName"] {
-                        if let system = data["System"] {
-                            if let price = data["Price"] {
-                                GameCoverArts = cover
-                                GameNames = name
-                                GamePlatforms = system
-                                GamePrices = price
-                            }
-                        }
-                    }
-                }
-            }
+        if let games = Game.initFromPropertyList() {
+            self.games = games
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
     }
     
     override func numberOfSectionsInTableView(tv: UITableView) -> Int {
@@ -58,7 +46,7 @@ class GameShopTableViewController: UITableViewController, GameTableViewCellDataS
     
     override func tableView(tv: UITableView, numberOfRowsInSection:  Int) -> Int {
         if numberOfRowsInSection == 0 {
-            return GameNames.count
+            return games.count
         } else {
             return 0
         }
@@ -76,8 +64,19 @@ class GameShopTableViewController: UITableViewController, GameTableViewCellDataS
         return cell
     }
     
+    override func tableView(tv: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tv.cellForRowAtIndexPath(indexPath) {
+            if cell.accessoryType == UITableViewCellAccessoryType.None {
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryType.None
+            }
+        }
+        tv.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     func coverArtForGameTableViewCell(sender: GameTableViewCell) -> UIImage? {
-        let file = GameCoverArts[sender.indexPath.row].componentsSeparatedByString(".")
+        let file = games[sender.indexPath.row].cover.componentsSeparatedByString(".")
         if let path = NSBundle.mainBundle().pathForResource(file[0], ofType: file[1]) {
             return UIImage(contentsOfFile: path)
         } else {
@@ -86,15 +85,15 @@ class GameShopTableViewController: UITableViewController, GameTableViewCellDataS
     }
     
     func gameNameForGameTableViewCell(sender: GameTableViewCell) -> String? {
-        return GameNames[sender.indexPath.row]
+        return games[sender.indexPath.row].title
     }
     
     func gamePlatformForGameTableViewCell(sender: GameTableViewCell) -> String? {
-        return GamePlatforms[sender.indexPath.row]
+        return games[sender.indexPath.row].system
     }
     
     func gamePriceForGameTableViewCell(sender: GameTableViewCell) -> String? {
-        return GamePrices[sender.indexPath.row]
+        return games[sender.indexPath.row].price
     }
     
 }
