@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Game {
+struct Game {
     private(set) var title, price, system, cover: String
     
     init(title: String, price: String, system: String, cover: String) {
@@ -18,7 +18,7 @@ class Game {
         self.cover = cover
     }
     
-    class func initFromPropertyList() -> [Game]? {
+    static func initFromPropertyList() -> [Game]? {
         if let path = NSBundle.mainBundle().pathForResource("Data", ofType: "plist") {
             if let data = NSDictionary(contentsOfFile: path) as? [String: [String]] {
                 if let cover = data["Cover"] {

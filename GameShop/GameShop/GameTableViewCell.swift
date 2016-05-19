@@ -16,23 +16,11 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet var gamePlatform: UILabel!
     @IBOutlet var gamePrice: UILabel!
     
-    /*override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }*/
-    
     weak var dataSource: GameTableViewCellDataSource? {
         didSet {
             gameCoverArt.image = dataSource?.coverArtForGameTableViewCell(self)
-            //gameCoverArt = UIImageView(image: dataSource?.coverArtForGameTableViewCell(self))
-            //gameName = UILabel()
             gameName.text = dataSource?.gameNameForGameTableViewCell(self)
-            //gamePlatform = UILabel()
             gamePlatform.text = dataSource?.gamePlatformForGameTableViewCell(self)
-            //gamePrice = UILabel()
             gamePrice.text = dataSource?.gamePriceForGameTableViewCell(self)
             if gamePrice.text != nil {
                 gamePrice.text! += " €"

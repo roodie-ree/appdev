@@ -71,8 +71,8 @@ class GameShopTableViewController: UITableViewController, GameTableViewCellDataS
             } else {
                 cell.accessoryType = UITableViewCellAccessoryType.None
             }
+            tv.deselectRowAtIndexPath(indexPath, animated: true)
         }
-        tv.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func coverArtForGameTableViewCell(sender: GameTableViewCell) -> UIImage? {
