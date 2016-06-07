@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qo2-5m-LNb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Scroll View Controller-->
+        <scene sceneID="K62-Qb-hg6">
+            <objects>
+                <viewController id="qo2-5m-LNb" customClass="ScrollViewController" customModule="NMR_Spec" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7NL-RR-2Rt"/>
+                        <viewControllerLayoutGuide type="bottom" id="nPG-ny-b4d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uAQ-mf-rSI" customClass="UIScrollView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Molecule.png" translatesAutoresizingMaskIntoConstraints="NO" id="alF-fe-tcs">
+                                <rect key="frame" x="20" y="28" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fA7-M3-VCe" appends="YES" id="iac-su-VeX"/>
+                                </connections>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="azf-Ax-qpM" customClass="Chart" customModule="NMR_Spec" customModuleProvider="target">
+                                <rect key="frame" x="36" y="171" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="alF-fe-tcs" id="IkU-1a-TWN"/>
+                        <outlet property="lineChartView" destination="azf-Ax-qpM" id="Myb-wD-fKG"/>
+                        <outlet property="scrollView" destination="uAQ-mf-rSI" id="v2A-MF-fZq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEG-8x-D1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fA7-M3-VCe">
+                    <connections>
+                        <action selector="MoleculeTapped:" destination="qo2-5m-LNb" id="0xW-8r-3F7"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="273" y="344"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Molecule.png" width="470" height="287"/>
+    </resources>
+</document>

@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		630981681D06F54A00DEF1B3 /* Data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 630981661D06F54A00DEF1B3 /* Data.csv */; };
+		630981691D06F54A00DEF1B3 /* Molecule.png in Resources */ = {isa = PBXBuildFile; fileRef = 630981671D06F54A00DEF1B3 /* Molecule.png */; };
+		6389AF0F1D008995001597DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF0E1D008995001597DD /* AppDelegate.swift */; };
+		6389AF111D008995001597DD /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF101D008995001597DD /* ScrollViewController.swift */; };
+		6389AF141D008995001597DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6389AF121D008995001597DD /* Main.storyboard */; };
+		6389AF171D008995001597DD /* NMR_Spec.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF151D008995001597DD /* NMR_Spec.xcdatamodeld */; };
+		6389AF191D008996001597DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6389AF181D008996001597DD /* Assets.xcassets */; };
+		6389AF1C1D008996001597DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6389AF1A1D008996001597DD /* LaunchScreen.storyboard */; };
+		6389AF271D008996001597DD /* NMR_SpecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF261D008996001597DD /* NMR_SpecTests.swift */; };
+		6389AF321D008996001597DD /* NMR_SpecUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF311D008996001597DD /* NMR_SpecUITests.swift */; };
+		6389AF431D008F1F001597DD /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF401D008F1F001597DD /* Chart.swift */; };
+		6389AF441D008F1F001597DD /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF411D008F1F001597DD /* ChartColors.swift */; };
+		6389AF451D008F1F001597DD /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF421D008F1F001597DD /* ChartSeries.swift */; };
+		6389AF4C1D008FB2001597DD /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF471D008FB2001597DD /* CSV.swift */; };
+		6389AF4D1D008FB2001597DD /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF481D008FB2001597DD /* Description.swift */; };
+		6389AF4E1D008FB2001597DD /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF491D008FB2001597DD /* Parser.swift */; };
+		6389AF4F1D008FB2001597DD /* ParserHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF4A1D008FB2001597DD /* ParserHelpers.swift */; };
+		6389AF501D008FB2001597DD /* String+Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6389AF4B1D008FB2001597DD /* String+Lines.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6389AF231D008996001597DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6389AF031D008995001597DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6389AF0A1D008995001597DD;
+			remoteInfo = "NMR-Spec";
+		};
+		6389AF2E1D008996001597DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6389AF031D008995001597DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6389AF0A1D008995001597DD;
+			remoteInfo = "NMR-Spec";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		630981661D06F54A00DEF1B3 /* Data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Data.csv; path = Source/SwiftCSV/Data.csv; sourceTree = "<group>"; };
+		630981671D06F54A00DEF1B3 /* Molecule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Molecule.png; path = Source/SwiftCSV/Molecule.png; sourceTree = "<group>"; };
+		6389AF0B1D008995001597DD /* NMR-Spec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NMR-Spec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6389AF0E1D008995001597DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6389AF101D008995001597DD /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		6389AF131D008995001597DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6389AF161D008995001597DD /* NMR_Spec.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NMR_Spec.xcdatamodel; sourceTree = "<group>"; };
+		6389AF181D008996001597DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6389AF1B1D008996001597DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6389AF1D1D008996001597DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6389AF221D008996001597DD /* NMR-SpecTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NMR-SpecTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6389AF261D008996001597DD /* NMR_SpecTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMR_SpecTests.swift; sourceTree = "<group>"; };
+		6389AF281D008996001597DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6389AF2D1D008996001597DD /* NMR-SpecUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NMR-SpecUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6389AF311D008996001597DD /* NMR_SpecUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMR_SpecUITests.swift; sourceTree = "<group>"; };
+		6389AF331D008996001597DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6389AF401D008F1F001597DD /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		6389AF411D008F1F001597DD /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
+		6389AF421D008F1F001597DD /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
+		6389AF471D008FB2001597DD /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
+		6389AF481D008FB2001597DD /* Description.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
+		6389AF491D008FB2001597DD /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		6389AF4A1D008FB2001597DD /* ParserHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserHelpers.swift; sourceTree = "<group>"; };
+		6389AF4B1D008FB2001597DD /* String+Lines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Lines.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6389AF081D008995001597DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6389AF1F1D008996001597DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6389AF2A1D008996001597DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6389AF021D008995001597DD = {
+			isa = PBXGroup;
+			children = (
+				6389AF0D1D008995001597DD /* NMR-Spec */,
+				6389AF251D008996001597DD /* NMR-SpecTests */,
+				6389AF301D008996001597DD /* NMR-SpecUITests */,
+				6389AF0C1D008995001597DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6389AF0C1D008995001597DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6389AF0B1D008995001597DD /* NMR-Spec.app */,
+				6389AF221D008996001597DD /* NMR-SpecTests.xctest */,
+				6389AF2D1D008996001597DD /* NMR-SpecUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6389AF0D1D008995001597DD /* NMR-Spec */ = {
+			isa = PBXGroup;
+			children = (
+				630981661D06F54A00DEF1B3 /* Data.csv */,
+				630981671D06F54A00DEF1B3 /* Molecule.png */,
+				6389AF461D008FB2001597DD /* CSV */,
+				6389AF3F1D008F1F001597DD /* Chart */,
+				6389AF0E1D008995001597DD /* AppDelegate.swift */,
+				6389AF101D008995001597DD /* ScrollViewController.swift */,
+				6389AF121D008995001597DD /* Main.storyboard */,
+				6389AF181D008996001597DD /* Assets.xcassets */,
+				6389AF1A1D008996001597DD /* LaunchScreen.storyboard */,
+				6389AF1D1D008996001597DD /* Info.plist */,
+				6389AF151D008995001597DD /* NMR_Spec.xcdatamodeld */,
+			);
+			path = "NMR-Spec";
+			sourceTree = "<group>";
+		};
+		6389AF251D008996001597DD /* NMR-SpecTests */ = {
+			isa = PBXGroup;
+			children = (
+				6389AF261D008996001597DD /* NMR_SpecTests.swift */,
+				6389AF281D008996001597DD /* Info.plist */,
+			);
+			path = "NMR-SpecTests";
+			sourceTree = "<group>";
+		};
+		6389AF301D008996001597DD /* NMR-SpecUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6389AF311D008996001597DD /* NMR_SpecUITests.swift */,
+				6389AF331D008996001597DD /* Info.plist */,
+			);
+			path = "NMR-SpecUITests";
+			sourceTree = "<group>";
+		};
+		6389AF3F1D008F1F001597DD /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				6389AF401D008F1F001597DD /* Chart.swift */,
+				6389AF411D008F1F001597DD /* ChartColors.swift */,
+				6389AF421D008F1F001597DD /* ChartSeries.swift */,
+			);
+			name = Chart;
+			path = Source;
+			sourceTree = "<group>";
+		};
+		6389AF461D008FB2001597DD /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				6389AF471D008FB2001597DD /* CSV.swift */,
+				6389AF481D008FB2001597DD /* Description.swift */,
+				6389AF491D008FB2001597DD /* Parser.swift */,
+				6389AF4A1D008FB2001597DD /* ParserHelpers.swift */,
+				6389AF4B1D008FB2001597DD /* String+Lines.swift */,
+			);
+			name = CSV;
+			path = Source/SwiftCSV;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6389AF0A1D008995001597DD /* NMR-Spec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6389AF361D008996001597DD /* Build configuration list for PBXNativeTarget "NMR-Spec" */;
+			buildPhases = (
+				6389AF071D008995001597DD /* Sources */,
+				6389AF081D008995001597DD /* Frameworks */,
+				6389AF091D008995001597DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NMR-Spec";
+			productName = "NMR-Spec";
+			productReference = 6389AF0B1D008995001597DD /* NMR-Spec.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6389AF211D008996001597DD /* NMR-SpecTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6389AF391D008996001597DD /* Build configuration list for PBXNativeTarget "NMR-SpecTests" */;
+			buildPhases = (
+				6389AF1E1D008996001597DD /* Sources */,
+				6389AF1F1D008996001597DD /* Frameworks */,
+				6389AF201D008996001597DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6389AF241D008996001597DD /* PBXTargetDependency */,
+			);
+			name = "NMR-SpecTests";
+			productName = "NMR-SpecTests";
+			productReference = 6389AF221D008996001597DD /* NMR-SpecTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6389AF2C1D008996001597DD /* NMR-SpecUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6389AF3C1D008996001597DD /* Build configuration list for PBXNativeTarget "NMR-SpecUITests" */;
+			buildPhases = (
+				6389AF291D008996001597DD /* Sources */,
+				6389AF2A1D008996001597DD /* Frameworks */,
+				6389AF2B1D008996001597DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6389AF2F1D008996001597DD /* PBXTargetDependency */,
+			);
+			name = "NMR-SpecUITests";
+			productName = "NMR-SpecUITests";
+			productReference = 6389AF2D1D008996001597DD /* NMR-SpecUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6389AF031D008995001597DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "David Falk";
+				TargetAttributes = {
+					6389AF0A1D008995001597DD = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZFRJG45LKT;
+					};
+					6389AF211D008996001597DD = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZFRJG45LKT;
+						TestTargetID = 6389AF0A1D008995001597DD;
+					};
+					6389AF2C1D008996001597DD = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZFRJG45LKT;
+						TestTargetID = 6389AF0A1D008995001597DD;
+					};
+				};
+			};
+			buildConfigurationList = 6389AF061D008995001597DD /* Build configuration list for PBXProject "NMR-Spec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6389AF021D008995001597DD;
+			productRefGroup = 6389AF0C1D008995001597DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6389AF0A1D008995001597DD /* NMR-Spec */,
+				6389AF211D008996001597DD /* NMR-SpecTests */,
+				6389AF2C1D008996001597DD /* NMR-SpecUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6389AF091D008995001597DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630981691D06F54A00DEF1B3 /* Molecule.png in Resources */,
+				630981681D06F54A00DEF1B3 /* Data.csv in Resources */,
+				6389AF1C1D008996001597DD /* LaunchScreen.storyboard in Resources */,
+				6389AF191D008996001597DD /* Assets.xcassets in Resources */,
+				6389AF141D008995001597DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6389AF201D008996001597DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6389AF2B1D008996001597DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6389AF071D008995001597DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6389AF4D1D008FB2001597DD /* Description.swift in Sources */,
+				6389AF431D008F1F001597DD /* Chart.swift in Sources */,
+				6389AF4F1D008FB2001597DD /* ParserHelpers.swift in Sources */,
+				6389AF171D008995001597DD /* NMR_Spec.xcdatamodeld in Sources */,
+				6389AF501D008FB2001597DD /* String+Lines.swift in Sources */,
+				6389AF111D008995001597DD /* ScrollViewController.swift in Sources */,
+				6389AF451D008F1F001597DD /* ChartSeries.swift in Sources */,
+				6389AF4E1D008FB2001597DD /* Parser.swift in Sources */,
+				6389AF0F1D008995001597DD /* AppDelegate.swift in Sources */,
+				6389AF4C1D008FB2001597DD /* CSV.swift in Sources */,
+				6389AF441D008F1F001597DD /* ChartColors.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6389AF1E1D008996001597DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6389AF271D008996001597DD /* NMR_SpecTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6389AF291D008996001597DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6389AF321D008996001597DD /* NMR_SpecUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6389AF241D008996001597DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6389AF0A1D008995001597DD /* NMR-Spec */;
+			targetProxy = 6389AF231D008996001597DD /* PBXContainerItemProxy */;
+		};
+		6389AF2F1D008996001597DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6389AF0A1D008995001597DD /* NMR-Spec */;
+			targetProxy = 6389AF2E1D008996001597DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6389AF121D008995001597DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6389AF131D008995001597DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6389AF1A1D008996001597DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6389AF1B1D008996001597DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6389AF341D008996001597DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		6389AF351D008996001597DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6389AF371D008996001597DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "NMR-Spec/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.davidfalk.NMR-Spec";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6389AF381D008996001597DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "NMR-Spec/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.davidfalk.NMR-Spec";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6389AF3A1D008996001597DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "NMR-SpecTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.davidfalk.NMR-SpecTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NMR-Spec.app/NMR-Spec";
+			};
+			name = Debug;
+		};
+		6389AF3B1D008996001597DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "NMR-SpecTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.davidfalk.NMR-SpecTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NMR-Spec.app/NMR-Spec";
+			};
+			name = Release;
+		};
+		6389AF3D1D008996001597DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "NMR-SpecUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.davidfalk.NMR-SpecUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "NMR-Spec";
+			};
+			name = Debug;
+		};
+		6389AF3E1D008996001597DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "NMR-SpecUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.davidfalk.NMR-SpecUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "NMR-Spec";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6389AF061D008995001597DD /* Build configuration list for PBXProject "NMR-Spec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6389AF341D008996001597DD /* Debug */,
+				6389AF351D008996001597DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6389AF361D008996001597DD /* Build configuration list for PBXNativeTarget "NMR-Spec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6389AF371D008996001597DD /* Debug */,
+				6389AF381D008996001597DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6389AF391D008996001597DD /* Build configuration list for PBXNativeTarget "NMR-SpecTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6389AF3A1D008996001597DD /* Debug */,
+				6389AF3B1D008996001597DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6389AF3C1D008996001597DD /* Build configuration list for PBXNativeTarget "NMR-SpecUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6389AF3D1D008996001597DD /* Debug */,
+				6389AF3E1D008996001597DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6389AF151D008995001597DD /* NMR_Spec.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6389AF161D008995001597DD /* NMR_Spec.xcdatamodel */,
+			);
+			currentVersion = 6389AF161D008995001597DD /* NMR_Spec.xcdatamodel */;
+			path = NMR_Spec.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6389AF031D008995001597DD /* Project object */;
+}
