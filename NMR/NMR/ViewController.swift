@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, HighlightDataProvider {
 
@@ -14,6 +15,8 @@ class ViewController: UIViewController, HighlightDataProvider {
     @IBOutlet weak var colorView: ColorView!
     @IBOutlet weak var barChartView: NmrBarChartView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     let couplingsInPicture = [0.0...0.25, 0.5...0.749, 0.75...1]
     let couplingsInDiagram = [0.514...0.554, 0.361...0.415, 0.565...0.617]
