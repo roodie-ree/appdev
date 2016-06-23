@@ -16,5 +16,4 @@ extension Highlight {
 
     @NSManaged var active: NSNumber?
     @NSManaged var index: NSNumber?
-
 }

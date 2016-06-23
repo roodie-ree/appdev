@@ -22,6 +22,7 @@
 		630986661D08561D00E89584 /* String+Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630986611D08561D00E89584 /* String+Lines.swift */; };
 		630986711D08572A00E89584 /* Data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6309866F1D08572A00E89584 /* Data.csv */; };
 		630986721D08572A00E89584 /* Molecule.png in Resources */ = {isa = PBXBuildFile; fileRef = 630986701D08572A00E89584 /* Molecule.png */; };
+		630C82381D1C2EBF00B67C0A /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630C82371D1C2EBF00B67C0A /* CoreDataModel.swift */; };
 		633CAFE11D10275500DC1EFC /* ChartAnimationEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633CAF631D10275500DC1EFC /* ChartAnimationEasing.swift */; };
 		633CAFE21D10275500DC1EFC /* ChartAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633CAF641D10275500DC1EFC /* ChartAnimator.swift */; };
 		633CAFE31D10275500DC1EFC /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633CAF661D10275500DC1EFC /* BarChartView.swift */; };
@@ -183,6 +184,7 @@
 		630986611D08561D00E89584 /* String+Lines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Lines.swift"; sourceTree = "<group>"; };
 		6309866F1D08572A00E89584 /* Data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Data.csv; sourceTree = "<group>"; };
 		630986701D08572A00E89584 /* Molecule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Molecule.png; sourceTree = "<group>"; };
+		630C82371D1C2EBF00B67C0A /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		633CAF631D10275500DC1EFC /* ChartAnimationEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartAnimationEasing.swift; sourceTree = "<group>"; };
 		633CAF641D10275500DC1EFC /* ChartAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartAnimator.swift; sourceTree = "<group>"; };
 		633CAF661D10275500DC1EFC /* BarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				630986701D08572A00E89584 /* Molecule.png */,
 				630986671D08562900E89584 /* CSV */,
 				6309862C1D0855E500E89584 /* AppDelegate.swift */,
+				630C82371D1C2EBF00B67C0A /* CoreDataModel.swift */,
 				6309862E1D0855E500E89584 /* ViewController.swift */,
 				634036091D198FFB001F316C /* HighlightDataProvider.swift */,
 				633CB0521D17E39F00DC1EFC /* NmrBarChartView.swift */,
@@ -803,6 +806,7 @@
 				633CB0511D10275500DC1EFC /* ChartViewPortHandler.swift in Sources */,
 				633CAFEB1D10275500DC1EFC /* PieChartView.swift in Sources */,
 				633CAFFD1D10275500DC1EFC /* BubbleChartDataEntry.swift in Sources */,
+				630C82381D1C2EBF00B67C0A /* CoreDataModel.swift in Sources */,
 				633CAFFF1D10275500DC1EFC /* CandleChartData.swift in Sources */,
 				633CB00F1D10275500DC1EFC /* ScatterChartDataSet.swift in Sources */,
 				633CB0481D10275500DC1EFC /* RadarChartRenderer.swift in Sources */,

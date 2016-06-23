@@ -14,68 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    private var _highlights: [Highlight]? = nil
-    var highlights: [Highlight]? {
-        get {
-            if _highlights != nil {
-                return _highlights
-            }
-            let fetchHighlights = NSFetchRequest(entityName: "Highlight")
-            fetchHighlights.sortDescriptors = [NSSortDescriptor(key: "index", ascending: true)]
-            guard let highlights = try? managedObjectContext.executeFetchRequest(fetchHighlights) as? [Highlight]
-                else { return nil }
-            _highlights = highlights
-            return _highlights
-        }
-        set {
-            _highlights = newValue
-            saveContext()
-        }
-    }
-    
-    private var _dataPoints: [DataPoint]? = nil
-    private(set) var dataPoints: [DataPoint]? {
-        get {
-            if _dataPoints != nil {
-                return _dataPoints
-            }
-            let requestDataPoints = NSFetchRequest(entityName: "DataPoint")
-            requestDataPoints.sortDescriptors = [NSSortDescriptor(key: "x", ascending: false)]
-            guard let dataPoints = try? managedObjectContext.executeFetchRequest(requestDataPoints) as? [DataPoint]
-                else { return nil }
-            return dataPoints
-        }
-        set {
-            _dataPoints = newValue
-            saveContext()
-        }
-    }
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        guard let highlights = highlights
-            else { return false }
-        if highlights.count == 0 {
-            for index in 0...2 {
-                let highlight = NSEntityDescription.insertNewObjectForEntityForName("Highlight", inManagedObjectContext: managedObjectContext) as! Highlight
-                highlight.index = index
-                highlight.active = false
-            }
-            self.highlights = nil
-        }
-        guard let dataPoints = dataPoints
-            else { return false }
-        if dataPoints.count == 0 {
-            let file = NSBundle.mainBundle().pathForResource("Data", ofType: "csv")
-            let data = try! CSV(name: file!)
-            let (x, y) = (data.header[0], data.header[1])
-            for row in data.rows {
-                let dataPoint = NSEntityDescription.insertNewObjectForEntityForName("DataPoint", inManagedObjectContext: managedObjectContext) as! DataPoint
-                dataPoint.x = Double(row[x]!)
-                dataPoint.y = Double(row[y]!)
-            }
-            self.dataPoints = nil
-        }
         return true
     }
 

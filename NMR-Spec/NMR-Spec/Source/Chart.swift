@@ -40,6 +40,8 @@ typealias ChartPoint = (x: Float, y: Float)
 public class Chart: UIControl {
 
     // MARK: Options
+    
+    public var image: UIImage?
 
     @IBInspectable
     public var identifier: String?
@@ -65,7 +67,7 @@ public class Chart: UIControl {
     /**
     Text alignment for the x-labels
     */
-    public var xLabelsTextAlignment: NSTextAlignment = .Left
+    public var xLabelsTextAlignment: NSTextAlignment = .Right
 
     /**
     Values to display as labels of the y-axis. If not specified, will display the
@@ -306,7 +308,9 @@ public class Chart: UIControl {
         if yLabels != nil || series.count > 0 {
             drawLabelsAndGridOnYAxis()
         }
-
+        if image != nil {
+            image!.drawAtPoint(CGPoint.zero)
+        }
     }
 
     // MARK: - Scaling
@@ -531,10 +535,14 @@ public class Chart: UIControl {
         CGContextSetLineWidth(context, 0.5)
 
         var labels: Array<Float>
-        if xLabels == nil {
+        /*if xLabels == nil {
             // Use labels from the first series
             labels = series[0].data.map({ (point: ChartPoint) -> Float in
                 return point.x })
+        
+        }*/
+        if xLabels == nil {
+            labels = [min.x, (min.x + max.x) / 2, max.x]
         } else {
             labels = xLabels!
         }

@@ -16,7 +16,7 @@ class ViewController: UIViewController, HighlightDataProvider {
     @IBOutlet weak var barChartView: NmrBarChartView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let model = CoreDataModel()!
     
     let couplingsInPicture = [0.0...0.25, 0.5...0.749, 0.75...1]
     let couplingsInDiagram = [0.514...0.554, 0.361...0.415, 0.565...0.617]
@@ -82,7 +82,7 @@ class ViewController: UIViewController, HighlightDataProvider {
         }
     }
     
-    func loadData() {
+    func loadFallbackData() {
         let file = NSBundle.mainBundle().pathForResource("Data", ofType: "csv")
         let data = try! CSV(name: file!)
         let (x, y) = (data.header[0], data.header[1])
@@ -90,7 +90,6 @@ class ViewController: UIViewController, HighlightDataProvider {
             element.index % 3 == 0
             }.map { element in
                 return element.element
-                //return String(format:"%.2f", Double(element.element)!)
         }
         var yVals = [String]()
         for (index, element) in data.columns[y]!.reverse().enumerate() {
@@ -99,7 +98,7 @@ class ViewController: UIViewController, HighlightDataProvider {
             }
         }
         let dataSet = BarChartDataSet(yVals: nil, label: "Ethyl Acetate")
-        dataSet.colors = [ChartColorTemplates.material().last!]
+        dataSet.colors = [chartColor]
         dataSet.barBorderWidth = 0.0
         dataSet.barSpace = 0.2
         for (index, yVal) in yVals.enumerate() {
@@ -107,6 +106,48 @@ class ViewController: UIViewController, HighlightDataProvider {
             dataSet.addEntry(entry)
         }
         let chartData = BarChartData(xVals: xVals, dataSets: [dataSet])
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.barChartView.animate(yAxisDuration: 2.0)
+            self.barChartView.data = chartData
+            self.activityIndicatorView.hidden = true
+            self.activityIndicatorView.stopAnimating()
+        }
+    }
+    
+    func loadData() {
+        if let savedHighlights = model.highlights {
+            for highlight in savedHighlights {
+                highlights[Int(highlight.index!)] = Bool(highlight.active!)
+            }
+        }
+        guard let dataPoints = model.dataPoints
+            else { return loadFallbackData() }
+        guard dataPoints.count > 0
+            else { return loadFallbackData() }
+        var xVals = [String]()
+        for (index, value) in dataPoints.enumerate() {
+            guard let xVal = value.x?.stringValue
+                else {
+                    print("Found nil for x-value at index \(index)")
+                    return loadFallbackData()
+            }
+            xVals.append(xVal)
+        }
+        var yVals = [BarChartDataEntry]()
+        for (index, value) in dataPoints.enumerate() {
+            guard let yVal = value.y?.doubleValue
+                else {
+                    print ("Found nil for y-value at index \(index)")
+                    return loadFallbackData() }
+            yVals.append(BarChartDataEntry(value: yVal, xIndex: index))
+        }
+        let dataSet = BarChartDataSet(yVals: yVals, label: "Ethyl Acetate")
+        dataSet.colors = [chartColor]
+        dataSet.barBorderWidth = 0.0
+        dataSet.barSpace = 0.2
+        let chartData = BarChartData(xVals: xVals, dataSets: [dataSet])
+        
         dispatch_async(dispatch_get_main_queue()) {
             self.barChartView.animate(yAxisDuration: 2.0)
             self.barChartView.data = chartData
@@ -125,10 +166,13 @@ class ViewController: UIViewController, HighlightDataProvider {
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), loadData)
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        for highlight in model.highlights! {
+            highlight.active = highlights[Int(highlight.index!)]
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
