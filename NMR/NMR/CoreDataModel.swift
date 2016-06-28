@@ -44,6 +44,7 @@ class CoreDataModel {
             self.dataPoints = nil
         }
     }
+    
     private var _highlights: [Highlight]? = nil
     private(set) var highlights: [Highlight]? {
         get {

@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class ColorView: UIView {
     @IBInspectable
     var lineWidth: CGFloat = 2 { didSet { setNeedsDisplay() } }

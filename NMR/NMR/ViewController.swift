@@ -18,11 +18,16 @@ class ViewController: UIViewController, HighlightDataProvider {
     
     let model = CoreDataModel()!
     
-    let couplingsInPicture = [0.0...0.25, 0.5...0.749, 0.75...1]
-    let couplingsInDiagram = [0.514...0.554, 0.361...0.415, 0.565...0.617]
-    var couplingColors = ChartColorTemplates.material()[0...2]
-    let chartColor = ChartColorTemplates.material()[3]
-    var highlights = [false, false, false] {
+    /// relative parts of the picture to color and tap on
+    private let couplingsInPicture = [0.0...0.25, 0.5...0.749, 0.75...1]
+    /// relative parts of the diagram to color tap on
+    private let couplingsInDiagram = [0.514...0.554, 0.361...0.415, 0.565...0.617]
+    @IBInspectable
+    private var couplingColors = ChartColorTemplates.material()[0...2]
+    @IBInspectable
+    private let chartColor = ChartColorTemplates.material()[3]
+    /// state of the highlighted couplings
+    private var highlights = [false, false, false] {
         didSet {
             colorView.setNeedsDisplay()
             barChartView.setNeedsDisplay()
@@ -56,9 +61,11 @@ class ViewController: UIViewController, HighlightDataProvider {
         guard sender.state == .Ended else {
             return
         }
+        // check in which view the touch happened
         let location = sender.locationInView(moleculeImageView)
+        // image view
         if location.x <= moleculeImageView.bounds.width &&
-           location.y <= moleculeImageView.bounds.height {
+            location.y <= moleculeImageView.bounds.height {
             let relativeX = Double(location.x / moleculeImageView.bounds.size.width)
             for (index, coupling) in couplingsInPicture.enumerate() {
                 if coupling.contains(relativeX) {
@@ -66,22 +73,22 @@ class ViewController: UIViewController, HighlightDataProvider {
                     return
                 }
             }
+        // bar chart view
         } else {
             let location = sender.locationInView(barChartView)
-            guard let
-                barIndex = barChartView.getHighlightByTouchPoint(location)?.xIndex,
-                countBars = barChartView.data?._xVals.count
+            guard let barIndex = barChartView.getHighlightByTouchPoint(location)?.xIndex,
+                      countBars = barChartView.data?._xVals.count
                 else { return }
             let relativeX = Double(barIndex) / Double(countBars)
             for (index, coupling) in couplingsInDiagram.enumerate() {
                 if coupling.contains(relativeX) {
                     toggleHighlight(atIndex: index)
-                    return
                 }
             }
         }
     }
     
+    /// load fallback data from a csv file
     func loadFallbackData() {
         let file = NSBundle.mainBundle().pathForResource("Data", ofType: "csv")
         let data = try! CSV(name: file!)
@@ -115,6 +122,7 @@ class ViewController: UIViewController, HighlightDataProvider {
         }
     }
     
+    /// load data from the database
     func loadData() {
         if let savedHighlights = model.highlights {
             for highlight in savedHighlights {
@@ -159,7 +167,8 @@ class ViewController: UIViewController, HighlightDataProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.dataProvider = self
-        guard let chartRenderer =  barChartView.renderer as? BarChartRenderer else { return }
+        guard let chartRenderer =  barChartView.renderer as? BarChartRenderer
+            else { return }
         chartRenderer.highlightDataProvider = self
         activityIndicatorView.startAnimating()
         activityIndicatorView.hidden = false

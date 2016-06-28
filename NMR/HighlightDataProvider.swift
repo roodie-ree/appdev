@@ -10,7 +10,6 @@ import UIKit
 
 protocol HighlightDataProvider: class {
     func isHighlighted(atIndex index: Int) -> Bool
-    func toggleHighlight(atIndex index: Int)
     func highlightColor(index: Int) -> NSUIColor
     func highlightFromBarIndex(index: Int) -> Int?
 }

@@ -8,8 +8,10 @@
 
 import Foundation
 
+@IBDesignable
 class NmrBarChartView: BarChartView, ChartXAxisValueFormatter {
     
+    // customize the look of the chart
     override internal func initialize() {
         super.initialize()
         noDataText = "Loading data..."
